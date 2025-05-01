@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritarth's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Kritarth - Creative Developer Portfolio showcasing web development, UI/UX design, and mobile-first solutions">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Kritarth<span>Bijalwann</span></a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span>Kritarth</span><br>Creative Developer</h1>
+                <p class="hero-subtitle">I create stunning digital experiences that transform ideas into reality</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn">View My Work</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="kb.png" alt="Profile Photo">
+                </div>
+                <div class="about-text">
+                    <h3>I'm a Passionate Software Developer</h3>
+                    <p>Aspiring Cloud Computing and Web Development enthusiast with a strong foundation in project management, event organization, and technical execution.</p>
+                    <p>Experienced in hosting cybersecurity events, developing cloud based solutions, and creating dynamic web interfaces.</p>
+                    <p>When I'm not coding, you can find me exploring new design trends, photographing landscapes, or enjoying a good book.</p>
+                    <div class="skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">APIs</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">WordPress</span>
+                    </div>
+                    <div class="cta-container">
+                        <a href="contact.html" class="btn">Get In Touch</a>
+                        <a href="https://drive.google.com/file/d/1cIw0T11MYFaJXWE1C4rsW-xAUHEInOEt/view?usp=sharing" class="btn btn-outline-dark">View My Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span>Services</span></h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">I create responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps with React.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">I design intuitive and visually engaging user interfaces. My focus is on creating experiences that are not only beautiful but also easy to use, keeping your users engaged and satisfied.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">I deploy and manage cloud-based applications with efficiency. Leveraging top cloud providers, I ensure your solutions are scalable, reliable, and cost-effective to meet your business demands.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="cloud">Cloud Computing</button>
+                <button class="filter-btn" data-filter="ui">API Integration</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <img src="/api/placeholder/600/400" alt="Project 1" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Youtube Clone</h3>
+                        <p class="portfolio-category">Web Design</p>
+                        <a href="#" class="btn portfolio-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="cloud">
+                    <img src="/api/placeholder/600/400" alt="Project 2" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Cloud Collab Platform</h3>
+                        <p class="portfolio-category">Cloud Computing</p>
+                        <a href="#" class="btn portfolio-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="ui">
+                    <img src="/api/placeholder/600/400" alt="Project 3" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Banking Dashboard</h3>
+                        <p class="portfolio-category">UI/UX Design</p>
+                        <a href="#" class="btn portfolio-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web" data-category="ui" >
+                    <img src="/api/placeholder/600/400" alt="Project 4" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Disaster Management</h3>
+                        <p class="portfolio-category">Web Design</p>
+                        <a href="#" class="btn portfolio-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="cloud">
+                    <img src="/api/placeholder/600/400" alt="Project 5" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Cloud Storage Manager</h3>
+                        <p class="portfolio-category">Cloud Computing</p>
+                        <a href="#" class="btn portfolio-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="ui">
+                    <img src="/api/placeholder/600/400" alt="Project 6" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Social Media Platform</h3>
+                        <p class="portfolio-category">UI/UX Design</p>
+                        <a href="#" class="btn portfolio-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="contact-container">
+          <div class="contact-info">
+              <h3>Let's Talk About Your Project</h3>
+              <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+              <div class="contact-details">
+                  <div class="contact-item">
+                      <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                      <span>Dehradun, UK</span>
+                  </div>
+                  <div class="contact-item">
+                      <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                      <span>kritarthbijalwann100105@gmail.com</span>
+                  </div>
+                  <div class="contact-item">
+                      <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                      <span>+91 999.....48</span>
+                  </div>
+              </div>
+              <div class="availability">
+                  <h4>Current Availability</h4>
+                  <div class="availability-status available">
+                      <span class="status-dot"></span>
+                      <span>Available for Freelance and Internships</span>
+                  </div>
+              </div>
+              <!-- Added dedicated contact page link -->
+              <div class="cta-container">
+                  <a href="contact.html" class="btn">Contact Form Page</a>
+              </div>
+          </div>
+          <div class="contact-form">
+              <form id="contactForm">
+                  <input type="text" placeholder="Your Name" required>
+                  <input type="email" placeholder="Your Email" required>
+                  <input type="text" placeholder="Subject">
+                  <textarea placeholder="Your Message" required></textarea>
+                  <button type="submit" class="btn btn-submit">Send Message</button>
+              </form>
+          </div>
+      </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/kritarthbijalwann10/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="http://www.linkedin.com/in/kritarth-bijalwann-b38a07282" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/KayBe05" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2025 Kritarth. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
