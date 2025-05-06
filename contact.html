@@ -9,9 +9,216 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Get in touch with Kritarth Bijalwann - Creative Developer">
     <style>
-        /* Specific styles for the contact page */
+        :root {
+            --primary-color: #2D3E50;
+            --secondary-color: #1A2530;
+            --accent-color: #16C79A;
+            --light-color: #F8F9FA;
+            --dark-color: #343A40;
+            --text-color: #495057;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        /* Global styles */
         body {
             background-color: var(--light-color);
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-small {
+            padding: 40px 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title span {
+            color: var(--accent-color);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
+            transition: var(--transition);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
+        
+        .nav-item {
+            margin: 0;
+        }
+        
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(22, 199, 154, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: #13a880;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(22, 199, 154, 0.3);
+        }
+        
+        .btn-submit {
+            width: auto;
+            min-width: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Specific styles for the contact page */
+        body {
+            background-color: #f9fafb;
         }
         
         .back-link {
@@ -19,16 +226,21 @@
             align-items: center;
             margin-bottom: 30px;
             color: var(--secondary-color);
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition);
+            font-size: 1.1rem;
         }
         
         .back-link i {
-            margin-right: 8px;
+            margin-right: 10px;
+            transition: var(--transition);
         }
         
         .back-link:hover {
             color: var(--accent-color);
+        }
+
+        .back-link:hover i {
             transform: translateX(-5px);
         }
         
@@ -36,139 +248,213 @@
             margin-bottom: 50px;
             text-align: center;
         }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #6c757d;
+        }
         
-        .contact-page-container {
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 600px;
+            margin-bottom: 60px;
         }
         
-        .contact-sidebar {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        .contact-info {
+            background: linear-gradient(135deg, var(--secondary-color), #2c4b64);
             color: white;
             padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
         }
         
-        .contact-sidebar h3 {
+        .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 20px;
+            color: white;
         }
         
-        .contact-sidebar p {
+        .contact-info p {
             margin-bottom: 30px;
             font-size: 1.1rem;
             opacity: 0.9;
+            line-height: 1.8;
         }
         
-        .contact-page-form {
-            padding: 50px 40px;
+        .contact-details {
+            margin-top: 40px;
         }
         
-        .input-group {
-            margin-bottom: 25px;
-        }
-        
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--secondary-color);
-        }
-        
-        .input-group input,
-        .input-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            transition: var(--transition);
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        .input-group input:focus,
-        .input-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(22, 199, 154, 0.1);
-        }
-        
-        .input-group textarea {
-            height: 150px;
-            resize: none;
-        }
-        
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 20px;
-        }
-        
-        .contact-details-item {
+        .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
         }
         
         .contact-icon {
-            background: rgba(255, 255, 255, 0.2);
-            width: 36px;
-            height: 36px;
+            background: rgba(255, 255, 255, 0.15);
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
-        }
-        
-        .social-links-contact {
-            display: flex;
-            gap: 12px;
-            margin-top: 30px;
-        }
-        
-        .social-link-contact {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
+
+        .contact-item:hover .contact-icon {
+            background: var(--accent-color);
+            transform: scale(1.1);
+        }
         
-        .social-link-contact:hover {
-            background: white;
+        .contact-item span:last-child {
+            font-size: 1.05rem;
+        }
+        
+        .availability {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .availability h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .availability-status {
+            display: flex;
+            align-items: center;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .available .status-dot {
+            background-color: #10d876;
+            box-shadow: 0 0 0 4px rgba(16, 216, 118, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 216, 118, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(16, 216, 118, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 216, 118, 0);
+            }
+        }
+        
+        .contact-form {
+            padding: 50px 40px;
+        }
+        
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            transition: var(--transition);
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: #f8f9fa;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(22, 199, 154, 0.1);
+            background-color: white;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            color: #6c757d;
+            font-size: 1rem;
+            transition: var(--transition);
+            pointer-events: none;
+            font-weight: 500;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label,
+        .input-group textarea:not(:placeholder-shown) ~ label {
+            top: -10px;
+            left: 15px;
+            font-size: 0.8rem;
+            background-color: white;
+            padding: 0 5px;
             color: var(--accent-color);
-            transform: translateY(-3px);
         }
-        
-        @media (max-width: 991px) {
-            .contact-page-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-sidebar {
-                display: none;
-            }
-            
-            .page-header {
-                margin-bottom: 30px;
-            }
+
+        .input-group input::placeholder,
+        .input-group textarea::placeholder {
+            color: transparent;
         }
-        
+
         .form-footer {
             display: flex;
             justify-content: space-between;
@@ -182,13 +468,330 @@
         }
         
         .success-message {
-            background-color: var(--accent-color);
+            background-color: #10d876;
             color: white;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
             text-align: center;
             display: none;
+            animation: fadeIn 0.5s ease;
+            box-shadow: 0 5px 15px rgba(16, 216, 118, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* New features */
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .input-group {
+            flex: 1;
+        }
+
+        .contact-methods {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-method {
+            flex: 1;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .contact-method:hover, .contact-method:focus {
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-7px);
+            border-color: rgba(22, 199, 154, 0.2);
+            outline: none;
+        }
+
+        .contact-method.active {
+            border-color: var(--accent-color);
+            background-color: rgba(22, 199, 154, 0.05);
+        }
+
+        .method-icon-container {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(22, 199, 154, 0.1), rgba(22, 199, 154, 0.2));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover .method-icon-container, 
+        .contact-method:focus .method-icon-container,
+        .contact-method.active .method-icon-container {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(22, 199, 154, 0.2), rgba(22, 199, 154, 0.3));
+        }
+
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .contact-method:hover i,
+        .contact-method:focus i,
+        .contact-method.active i {
+            transform: scale(1.1);
+        }
+        
+        .method-hover-effect {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(22, 199, 154, 0.9), transparent);
+            height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-method:hover .method-hover-effect,
+        .contact-method:focus .method-hover-effect {
+            height: 40px;
+            opacity: 1;
+        }
+        
+        .click-action {
+            color: white;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .contact-method h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .additional-cta {
+            margin-top: 60px;
+            text-align: center;
+            padding: 50px 30px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .additional-cta h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .additional-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Floating labels and focus effects */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group.focused input,
+        .input-group.focused textarea {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(22, 199, 154, 0.1);
+            background-color: white;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            padding: 18px 20px 12px;
+            transition: all 0.3s;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            font-size: 1rem;
+            color: #6c757d;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .input-group textarea ~ label {
+            top: 25px;
+        }
+
+        .input-group.focused label,
+        .input-group input:not(:placeholder-shown) ~ label,
+        .input-group textarea:not(:placeholder-shown) ~ label,
+        .input-group input.has-value ~ label,
+        .input-group textarea.has-value ~ label {
+            top: 10px;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Form validation styles */
+        .input-group.error input,
+        .input-group.error textarea {
+            border-color: #dc3545;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .input-group.error .error-message {
+            display: block;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 991px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding: 40px 30px;
+            }
+            
+            .contact-form {
+                padding: 40px 30px;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: -100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                gap: 0;
+            }
+            
+            .nav-menu.active {
+                top: 70px;
+            }
+            
+            .nav-item {
+                margin: 0;
+                width: 100%;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 15px;
+            }
+            
+            .nav-link::after {
+                display: none;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-info h3,
+            .additional-cta h3 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -199,13 +802,16 @@
             <nav class="navbar">
                 <a href="index.html" class="logo">Kritarth<span>Bijalwann</span></a>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html#hero" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="index.html#portfolio" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#hero" class="nav-link" role="menuitem">Home</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#about" class="nav-link" role="menuitem">About</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#skills" class="nav-link" role="menuitem">Skills</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#experience" class="nav-link" role="menuitem">Experience</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#projects" class="nav-link" role="menuitem">Projects</a></li>
+                    <li class="nav-item" role="none"><a href="index.html#certifications" class="nav-link" role="menuitem">Certifications</a></li>
+                    <li class="nav-item" role="none"><a href="contact.html" class="nav-link active" role="menuitem">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <div class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -214,80 +820,116 @@
         </div>
     </header>
 
-    <!-- Contact Page Content -->
-    <section class="section" style="padding-top: 150px;">
+    <!-- Contact Banner -->
+    <section id="contact-banner" class="section-small" style="padding-top: 150px;">
         <div class="container">
             <a href="index.html#about" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-            
-            <div class="page-header">
-                <h1 class="section-title">Get In <span>Touch</span></h1>
-                <p>I'd love to hear about your project and how I can help.</p>
+        </div>
+        <div class="page-header">
+            <h1 class="section-title">Get In <span>Touch</span></h1>
+            <p>I'd love to hear about your project and how I can help bring your ideas to life.</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="section-small">
+        <div class="container">
+            <div class="contact-methods">
+                <div class="contact-method" tabindex="0">
+                    <div class="method-icon-container">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h4>Email Me</h4>
+                    <p>The fastest way to get a response from me</p>
+                    <div class="method-hover-effect">
+                        <span class="click-action">Click to start</span>
+                    </div>
+                </div>
+                <div class="contact-method" tabindex="0">
+                    <div class="method-icon-container">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Call Me</h4>
+                    <p>For urgent inquiries and discussions</p>
+                    <div class="method-hover-effect">
+                        <span class="click-action">Click to start</span>
+                    </div>
+                </div>
+                <div class="contact-method" tabindex="0">
+                    <div class="method-icon-container">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h4>Connect on LinkedIn</h4>
+                    <p>Let's expand our professional network</p>
+                    <div class="method-hover-effect">
+                        <span class="click-action">Click to start</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="contact-page-container">
-                <div class="contact-sidebar">
-                    <div>
-                        <img src="kay_be.png" alt="Kritarth Bijalwann" class="profile-image">
-                        <h3>Let's talk about your project</h3>
-                        <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-details-item">
-                                <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                                <span>Dehradun, UK</span>
-                            </div>
-                            <div class="contact-details-item">
-                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                                <span>kritarthbijalwann100105@gmail.com</span>
-                            </div>
-                            <div class="contact-details-item">
-                                <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
-                                <span>+91 999.....48</span>
-                            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Discuss Your Project</h3>
+                    <p style="color: white;">I'm always excited to collaborate on new opportunities and innovative ideas. Whether you have a specific project in mind or just want to explore possibilities, I'm here to help turn your vision into reality.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>Dehradun, UK</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <span>kritarthbijalwann100105@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                            <span>+91 999.....48</span>
                         </div>
                     </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: 15px;">Connect with me</h4>
-                        <div class="social-links-contact">
-                            <a href="https://www.instagram.com/kritarthbijalwann10/" class="social-link-contact" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="http://www.linkedin.com/in/kritarth-bijalwann-b38a07282" class="social-link-contact" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/KayBe05" class="social-link-contact" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <div class="availability">
+                        <h4>Current Availability</h4>
+                        <div class="availability-status available">
+                            <span class="status-dot"></span>
+                            <span>Open to Freelance/Internships</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-page-form">
-                    <h2 style="margin-bottom: 30px; color: var(--secondary-color);">Send Me a Message</h2>
-                    
-                    <form id="contactPageForm">
-                        <div class="input-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="text" id="name" required placeholder="Your Name">
+                                <label for="name">Your Name*</label>
+                                <div class="error-message">Please enter your name</div>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" required placeholder="Your Email">
+                                <label for="email">Your Email*</label>
+                                <div class="error-message">Please enter a valid email</div>
+                            </div>
                         </div>
-                        
                         <div class="input-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="input-group">
+                            <input type="text" id="subject" placeholder="Subject">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject">
                         </div>
-                        
                         <div class="input-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" required placeholder="Your Message"></textarea>
+                            <label for="message">Your Message*</label>
+                            <div class="error-message">Please enter your message</div>
                         </div>
-                        
                         <div class="form-footer">
-                            <p class="privacy-text">Your information will never be shared with any third party.</p>
-                            <button type="submit" class="btn btn-submit">Send Message</button>
+                            <div class="privacy-text">Your information will never be shared with third parties.</div>
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
                         </div>
-                        
                         <div id="successMessage" class="success-message">
-                            Thank you for your message!! I'll get back to you as soon as possible.
+                            <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
+                            Thank you! Your message has been sent successfully. I'll get back to you soon.
                         </div>
                     </form>
                 </div>
@@ -295,8 +937,31 @@
         </div>
     </section>
 
+    <!-- Map Section -->
+    <section id="map" class="section-small">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110125.16651489247!2d77.96812189554115!3d30.325835936953857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c356c888af%3A0x4c3562c032518799!2sDehradun%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1619530709421!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional CTA -->
+    <section class="section-small">
+        <div class="container">
+            <div class="additional-cta">
+                <h3>Need a Developer for Your Team?</h3>
+                <p>I'm currently open to internship and freelance opportunities. If you're looking for a dedicated developer to join your team, let's discuss how I can contribute to your success.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="index.html#skills" class="btn btn-outline">View My Skills</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer style="margin-top: 80px;">
+    <footer>
         <div class="container">
             <div class="social-links">
                 <a href="https://www.instagram.com/kritarthbijalwann10/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -308,7 +973,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Navigation Toggle
@@ -320,6 +984,10 @@
                 hamburger.addEventListener('click', function() {
                     hamburger.classList.toggle('active');
                     navMenu.classList.toggle('active');
+                    
+                    // Update ARIA attributes
+                    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+                    hamburger.setAttribute('aria-expanded', !expanded);
                 });
             }
 
@@ -328,68 +996,208 @@
                 link.addEventListener('click', function() {
                     hamburger.classList.remove('active');
                     navMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
                 });
             });
 
-            // Contact Form Handling
-            const contactPageForm = document.getElementById('contactPageForm');
+            // Form validation
+            const contactForm = document.getElementById('contactForm');
             const successMessage = document.getElementById('successMessage');
             
-            if (contactPageForm) {
-                contactPageForm.addEventListener('submit', function(e) {
+            if (contactForm) {
+                // Input focus effects
+                const inputs = contactForm.querySelectorAll('input, textarea');
+                
+                inputs.forEach(input => {
+                    // Auto-focus label if field has value on page load
+                    if (input.value.trim() !== '') {
+                        input.classList.add('has-value');
+                    }
+                    
+                    // Handle input events
+                    input.addEventListener('focus', function() {
+                        this.parentElement.classList.add('focused');
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        this.parentElement.classList.remove('focused');
+                        
+                        // Validate on blur
+                        validateField(this);
+                    });
+                    
+                    input.addEventListener('input', function() {
+                        if (this.parentElement.classList.contains('error')) {
+                            validateField(this);
+                        }
+                    });
+                });
+                
+                // Form validation function
+                function validateField(field) {
+                    const parent = field.parentElement;
+                    
+                    // Reset error state
+                    parent.classList.remove('error');
+                    
+                    // Required field validation
+                    if (field.hasAttribute('required') && field.value.trim() === '') {
+                        parent.classList.add('error');
+                        return false;
+                    }
+                    
+                    // Email validation
+                    if (field.type === 'email' && field.value.trim() !== '') {
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(field.value)) {
+                            parent.classList.add('error');
+                            return false;
+                        }
+                    }
+                    
+                    return true;
+                }
+                
+                // Form submission handling
+                contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Get form values
-                    const formData = new FormData(this);
-                    const formValues = Object.fromEntries(formData.entries());
-                    
-                    // Validate form
+                    // Validate all fields
                     let isValid = true;
-                    const inputs = this.querySelectorAll('input, textarea');
+                    const formFields = this.querySelectorAll('input, textarea');
                     
-                    inputs.forEach(input => {
-                        if (input.hasAttribute('required') && !input.value.trim()) {
+                    formFields.forEach(field => {
+                        if (!validateField(field)) {
                             isValid = false;
-                            input.style.borderColor = 'red';
-                        } else {
-                            input.style.borderColor = '#eee';
-                        }
-                        
-                        if (input.type === 'email' && input.value) {
-                            // Simple email validation
-                            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                            if (!emailPattern.test(input.value)) {
-                                isValid = false;
-                                input.style.borderColor = 'red';
-                            }
                         }
                     });
                     
                     if (!isValid) {
-                        alert('Please fill all required fields correctly');
+                        // Scroll to first error
+                        const firstError = this.querySelector('.error');
+                        if (firstError) {
+                            firstError.querySelector('input, textarea').focus();
+                        }
                         return;
                     }
                     
-                    // In a real scenario, you would send this data to a server
-                    console.log('Form submitted with values:', formValues);
+                    // Form data collection
+                    const formData = new FormData(this);
+                    const formValues = Object.fromEntries(formData.entries());
                     
-                    // Show success message
-                    successMessage.style.display = 'block';
+                    // Show loading state on button
+                    const submitBtn = this.querySelector('.btn-submit');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
                     
-                    // Hide success message after 5 seconds
+                    // Simulate form submission (replace with actual form submission in production)
                     setTimeout(() => {
-                        successMessage.style.opacity = '0';
+                        // In a real scenario, you would send this data to a server
+                        console.log('Form submitted with values:', formValues);
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Reset button
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                        
+                        // Show success message with animation
+                        successMessage.style.display = 'block';
+                        
+                        // Hide success message after 5 seconds
                         setTimeout(() => {
-                            successMessage.style.display = 'none';
-                            successMessage.style.opacity = '1';
-                        }, 500);
-                    }, 5000);
-                    
-                    // Reset form
-                    this.reset();
+                            successMessage.style.opacity = '0';
+                            successMessage.style.transform = 'translateY(-10px)';
+                            
+                            setTimeout(() => {
+                                successMessage.style.display = 'none';
+                                successMessage.style.opacity = '1';
+                                successMessage.style.transform = 'translateY(0)';
+                            }, 500);
+                        }, 5000);
+                    }, 1500);
                 });
             }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    if (target) {
+                        e.preventDefault();
+                        
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.padding = '5px 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.07)';
+                }
+            });
+            
+            // Interactive contact methods
+            const contactMethods = document.querySelectorAll('.contact-method');
+            
+            contactMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    // Apply active state to clicked method
+                    contactMethods.forEach(m => m.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get the contact method title
+                    const methodTitle = this.querySelector('h4').textContent;
+                    
+                    // Auto-fill subject based on contact method
+                    const subjectField = document.getElementById('subject');
+                    
+                    if (subjectField) {
+                        switch(methodTitle) {
+                            case 'Email Me':
+                                subjectField.value = 'General Inquiry';
+                                break;
+                            case 'Call Me':
+                                subjectField.value = 'Phone Call Request';
+                                break;
+                            case 'Connect on LinkedIn':
+                                subjectField.value = 'LinkedIn Connection';
+                                break;
+                        }
+                        
+                        // Trigger label animation
+                        if (subjectField.value) {
+                            subjectField.classList.add('has-value');
+                        }
+                    }
+                    
+                    // Scroll to form
+                    document.getElementById('contact').scrollIntoView({
+                        behavior: 'smooth', 
+                        block: 'start'
+                    });
+                    
+                    // Focus first empty required field
+                    setTimeout(() => {
+                        const emptyField = document.querySelector('input[required]:not([value]), textarea[required]:not(:filled)');
+                        if (emptyField) {
+                            emptyField.focus();
+                        }
+                    }, 800);
+                });
+            });
         });
     </script>
-</body>
-</html>
