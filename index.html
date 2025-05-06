@@ -8,25 +8,30 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Kritarth - Creative Developer Portfolio showcasing web development, UI/UX design, and mobile-first solutions">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 </head>
 <body>
     <!-- Header -->
     <header id="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Kritarth<span>Bijalwann</span></a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            <nav class="navbar"> 
+                <a href="#header" class="logo">Kritarth<span>Bijalwann</span></a>
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none"><a href="#hero" class="nav-link active" role="menuitem">Home</a></li>
+                    <li class="nav-item" role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                    <li class="nav-item" role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                    <li class="nav-item" role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                    <li class="nav-item" role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li class="nav-item" role="none"><a href="#portfolio" class="nav-link" role="menuitem">Projects</a></li>
+                    <li class="nav-item" role="none"><a href="#certifications" class="nav-link" role="menuitem">Certifications</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -51,7 +56,7 @@
             <h2 class="section-title">About <span>Me</span></h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="kb.png" alt="Profile Photo">
+                    <img src="kb.png" alt="Profile Photo" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>I'm a Passionate Software Developer</h3>
@@ -70,35 +75,135 @@
                     </div>
                     <div class="cta-container">
                         <a href="contact.html" class="btn">Get In Touch</a>
-                        <a href="https://drive.google.com/file/d/1cIw0T11MYFaJXWE1C4rsW-xAUHEInOEt/view?usp=sharing" class="btn btn-outline-dark">View My Resume</a>
+                        <a href="https://drive.google.com/file/d/1cIw0T11MYFaJXWE1C4rsW-xAUHEInOEt/view?usp=sharing" class="btn btn-outline-dark" target="_blank">
+                            View My Resume
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">My <span>Services</span></h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">I create responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps with React.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3 class="category-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <h4>HTML5</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                            <h4>CSS3</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-js"></i></div>
+                            <h4>JavaScript</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-react"></i></div>
+                            <h4>React</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                            <h4>Cloud Computing</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <h4>APIs</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-palette"></i></div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">I design intuitive and visually engaging user interfaces. My focus is on creating experiences that are not only beautiful but also easy to use, keeping your users engaged and satisfied.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                <div class="skills-category">
+                    <h3 class="category-title">Soft Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-users"></i></div>
+                            <h4>Teamwork</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-tasks"></i></div>
+                            <h4>Project Management</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-comment-dots"></i></div>
+                            <h4>Communication</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                            <h4>Problem Solving</h4>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3 class="service-title">Cloud Solutions</h3>
-                    <p class="service-description">I deploy and manage cloud-based applications with efficiency. Leveraging top cloud providers, I ensure your solutions are scalable, reliable, and cost-effective to meet your business demands.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span>Experience</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 2025 - Present</div>
+                        <h3 class="timeline-title">Student Placement Coordinator</h3>
+                        <h4 class="timeline-company">Placement Cell, MUJ</h4>
+                        <p class="timeline-description">Developing responsive web applications using React and integrating REST APIs. Collaborating with senior developers to implement new features and improve user experience.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2024 - May 2025</div>
+                        <h3 class="timeline-title">Joint Head Programs</h3>
+                        <h4 class="timeline-company">Cyber Space Club, MUJ</h4>
+                        <p class="timeline-description">Created wireframes and prototypes for mobile applications. Conducted user research and usability testing to improve design solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2023 - May 2024</div>
+                        <h3 class="timeline-title">Junior Working Team</h3>
+                        <h4 class="timeline-company">Cyber Space Club, MUJ</h4>
+                        <p class="timeline-description">Organized monthly cybersecurity workshops and hackathons. Managed a team of 10 club members and coordinated with industry professionals for guest lectures.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,7 +221,7 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="web">
-                    <img src="/api/placeholder/600/400" alt="Project 1" class="portfolio-image">
+                    <img src="/api/placeholder/600/400" alt="Project 1" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Youtube Clone</h3>
                         <p class="portfolio-category">Web Design</p>
@@ -124,7 +229,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="cloud">
-                    <img src="/api/placeholder/600/400" alt="Project 2" class="portfolio-image">
+                    <img src="/api/placeholder/600/400" alt="Project 2" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Cloud Collab Platform</h3>
                         <p class="portfolio-category">Cloud Computing</p>
@@ -132,14 +237,14 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="ui">
-                    <img src="/api/placeholder/600/400" alt="Project 3" class="portfolio-image">
+                    <img src="/api/placeholder/600/400" alt="Project 3" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Banking Dashboard</h3>
                         <p class="portfolio-category">UI/UX Design</p>
                         <a href="#" class="btn portfolio-btn">View Project</a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="web" data-category="ui" >
+                <div class="portfolio-item" data-category="web" data-category="ui" loading="lazy">
                     <img src="/api/placeholder/600/400" alt="Project 4" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Disaster Management</h3>
@@ -148,7 +253,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="cloud">
-                    <img src="/api/placeholder/600/400" alt="Project 5" class="portfolio-image">
+                    <img src="/api/placeholder/600/400" alt="Project 5" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Cloud Storage Manager</h3>
                         <p class="portfolio-category">Cloud Computing</p>
@@ -156,7 +261,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="ui">
-                    <img src="/api/placeholder/600/400" alt="Project 6" class="portfolio-image">
+                    <img src="/api/placeholder/600/400" alt="Project 6" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Social Media Platform</h3>
                         <p class="portfolio-category">UI/UX Design</p>
@@ -167,50 +272,77 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container">
-      <h2 class="section-title">Get In <span>Touch</span></h2>
-      <div class="contact-container">
-          <div class="contact-info">
-              <h3>Let's Talk About Your Project</h3>
-              <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
-              <div class="contact-details">
-                  <div class="contact-item">
-                      <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                      <span>Dehradun, UK</span>
-                  </div>
-                  <div class="contact-item">
-                      <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                      <span>kritarthbijalwann100105@gmail.com</span>
-                  </div>
-                  <div class="contact-item">
-                      <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
-                      <span>+91 999.....48</span>
-                  </div>
-              </div>
-              <div class="availability">
-                  <h4>Current Availability</h4>
-                  <div class="availability-status available">
-                      <span class="status-dot"></span>
-                      <span>Available for Freelance and Internships</span>
-                  </div>
-              </div>
-              <!-- Added dedicated contact page link -->
-              <div class="cta-container">
-                  <a href="contact.html" class="btn">Contact Form Page</a>
-              </div>
-          </div>
-          <div class="contact-form">
-              <form id="contactForm">
-                  <input type="text" placeholder="Your Name" required>
-                  <input type="email" placeholder="Your Email" required>
-                  <input type="text" placeholder="Subject">
-                  <textarea placeholder="Your Message" required></textarea>
-                  <button type="submit" class="btn btn-submit">Send Message</button>
-              </form>
-          </div>
-      </div>
+    <!-- Education Section -->
+    <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">My <span>Education</span></h2>
+                <div class="education-container">
+                    <div class="education-item">
+                        <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="education-content">
+                            <h3 class="education-degree">Bachelor of Technology in Information Technology</h3>
+                            <h4 class="education-school">Manipal University Jaipur, Jaipur</h4>
+                            <p class="education-date">2023 - 2027</p>
+                            <p class="education-description">Focusing on cloud computing, web development, and cybersecurity. </p>
+                            <p class="education-description" style="padding-top: 5px;">Current GPA: 8.3/10</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon"><i class="fas fa-school"></i></div>
+                        <div class="education-content">
+                            <h3 class="education-degree">Higher Secondary Education</h3>
+                            <h4 class="education-school">The Heritage School, Dehradun</h4>
+                            <p class="education-date">2008 - 2022</p>
+                            <p class="education-description">Specialized in Maths, Physics with Computer Applications.</p>
+                            <p class="education-description" style="padding-top: 15px; margin-bottom: 0;">Graduated with 94% score.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span>Certifications</span></h2>
+            <div class="certifications-container">
+                <div class="certification-item">
+                    <div class="certification-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">AWS Certified Cloud Practitioner</h3>
+                        <p class="certification-issuer">Amazon Web Services</p>
+                        <p class="certification-date">February 2025</p>
+                        <a href="https://coursera.org/verify/MRG45W7444AV" target="_blank" class="btn-small">Verify</a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">Programming in Python Certification</h3>
+                        <p class="certification-issuer">Meta</p>
+                        <p class="certification-date">December 2024</p>
+                        <a href="https://coursera.org/verify/LC78EL54W7T2" target="_blank" class="btn-small">Verify</a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">Version Control</h3>
+                        <p class="certification-issuer">Meta</p>
+                        <p class="certification-date">January 2025</p>
+                        <a href="https://coursera.org/verify/QIZAMOHY0N5A" target="_blank" class="btn-small">Verify</a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">UI/UX Design Fundamentals</h3>
+                        <p class="certification-issuer">Google</p>
+                        <p class="certification-date">July 2023</p>
+                        <a href="#" target="_blank" class="btn-small">Verify</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
