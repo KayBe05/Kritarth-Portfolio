@@ -145,6 +145,65 @@ const ui = {
     }
   }
 };
+// Add this to your main.js file
+
+// Skills animation
+function animateSkills() {
+  const skillsSection = document.querySelector('#skills');
+  const skillsContainer = document.querySelector('.skills-container');
+  
+  // Function to check if element is in viewport
+  function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+          rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.bottom >= 0
+      );
+  }
+  
+  // Function to animate when scrolling
+  function checkScroll() {
+      if (isInViewport(skillsSection)) {
+          skillsContainer.classList.add('animate');
+          // Remove scroll listener once animation is triggered
+          window.removeEventListener('scroll', checkScroll);
+      }
+  }
+  
+  // Listen for scroll event
+  window.addEventListener('scroll', checkScroll);
+  
+  // Check on initial load too
+  checkScroll();
+}
+
+// Initialize skill bars with their data-value property
+function initSkillBars() {
+  const skillLevels = document.querySelectorAll('.skill-level');
+  skillLevels.forEach(skill => {
+      skill.style.setProperty('--skill-width', skill.getAttribute('data-value'));
+  });
+}
+
+// Run when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initSkillBars();
+  animateSkills();
+  
+  // Add hover effect to skill items
+  const skillItems = document.querySelectorAll('.skill-item');
+  skillItems.forEach(item => {
+      item.addEventListener('mouseenter', function() {
+          const icon = this.querySelector('.skill-icon');
+          icon.style.transform = 'rotate(10deg) scale(1.2)';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+          const icon = this.querySelector('.skill-icon');
+          icon.style.transform = '';
+      });
+  });
+});
 
 // Navigation functionality
 const navigation = {
@@ -403,112 +462,6 @@ const contactForm = {
         });
       });
     });
-  }
-};
-
-// Testimonials carousel (if added later)
-const testimonials = {
-  init: () => {
-    const testimonialItems = document.querySelectorAll('.testimonial');
-    if (testimonialItems.length <= 1) return;
-    
-    let currentTestimonial = 0;
-    const testimonialContainer = document.querySelector('.testimonial-container');
-    
-    if (testimonialContainer) {
-      // Create navigation controls
-      const navControls = document.createElement('div');
-      navControls.className = 'testimonial-navigation';
-      navControls.innerHTML = `
-        <button class="testimonial-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-        <div class="testimonial-indicators"></div>
-        <button class="testimonial-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-      `;
-      testimonialContainer.appendChild(navControls);
-      
-      // Create indicators
-      const indicatorsContainer = navControls.querySelector('.testimonial-indicators');
-      testimonialItems.forEach((_, index) => {
-        const indicator = document.createElement('button');
-        indicator.className = 'testimonial-indicator';
-        indicator.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
-        if (index === 0) indicator.classList.add('active');
-        
-        indicator.addEventListener('click', () => {
-          showTestimonial(index);
-        });
-        
-        indicatorsContainer.appendChild(indicator);
-      });
-      
-      // Add event listeners to navigation buttons
-      const prevButton = navControls.querySelector('.testimonial-prev');
-      const nextButton = navControls.querySelector('.testimonial-next');
-      
-      prevButton.addEventListener('click', () => {
-        currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-      });
-      
-      nextButton.addEventListener('click', () => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-      });
-      
-      // Show only the first testimonial initially
-      testimonialItems.forEach((testimonial, i) => {
-        if (i !== 0) {
-          testimonial.style.display = 'none';
-          testimonial.style.opacity = '0';
-        }
-      });
-      
-      // Start auto-rotation
-      let intervalId = setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-      }, 5000);
-      
-      // Pause auto-rotation when interacting with testimonials
-      testimonialContainer.addEventListener('mouseenter', () => {
-        clearInterval(intervalId);
-      });
-      
-      testimonialContainer.addEventListener('mouseleave', () => {
-        intervalId = setInterval(() => {
-          currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-          showTestimonial(currentTestimonial);
-        }, 5000);
-      });
-    }
-    
-    function showTestimonial(index) {
-      testimonialItems.forEach((testimonial, i) => {
-        if (i === index) {
-          testimonial.style.display = 'block';
-          setTimeout(() => {
-            testimonial.style.opacity = '1';
-          }, 10);
-        } else {
-          testimonial.style.opacity = '0';
-          setTimeout(() => {
-            testimonial.style.display = 'none';
-          }, 500);
-        }
-      });
-      
-      // Update indicators
-      const indicators = document.querySelectorAll('.testimonial-indicator');
-      indicators.forEach((indicator, i) => {
-        if (i === index) {
-          indicator.classList.add('active');
-        } else {
-          indicator.classList.remove('active');
-        }
-      });
-      
-      currentTestimonial = index;
-    }
   }
 };
 
